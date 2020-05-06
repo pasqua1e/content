@@ -66,10 +66,6 @@ configuration:
   name: useSplunkTime
   required: false
   type: 8
-- display: Trust any certificate (not secure)
-  name: unsecure
-  required: false
-  type: 8
 - defaultvalue: index_earliest
   display: Earliest time to fetch (the name of the Splunk field whose value defines
     the query's earliest time to fetch)
@@ -101,6 +97,18 @@ configuration:
   name: fetch_time
   required: false
   type: 0
+- display: Trust any certificate (not secure)
+  name: unsecure
+  required: false
+  type: 8
+- display: Certificate
+  name: certificate
+  required: false
+  type: 12
+- display: Private Key
+  name: key
+  required: false
+  type: 14
 description: Run queries on Splunk servers.
 display: SplunkPy
 name: SplunkPy

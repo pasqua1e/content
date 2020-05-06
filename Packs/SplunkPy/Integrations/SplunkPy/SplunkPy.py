@@ -13,6 +13,7 @@ import requests
 import urllib3
 import io
 import re
+from tempfile import NamedTemporaryFile
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Define utf8 as default encoding
@@ -682,13 +683,29 @@ def main():
             else:
                 raise
     else:
-        service = client.connect(
-            host=demisto.params()['host'],
-            port=demisto.params()['port'],
-            app=demisto.params().get('app'),
-            username=demisto.params()['authentication']['identifier'],
-            password=demisto.params()['authentication']['password'],
-            verify=VERIFY_CERTIFICATE)
+        connect_args = {
+            'host': demisto.params()['host'],
+            'port': demisto.params()['port'],
+            'app': demisto.params().get('app'),
+            'username': demisto.params()['authentication']['identifier'],
+            'password': demisto.params()['authentication']['password'],
+            'verify': VERIFY_CERTIFICATE
+        }
+        certificate = demisto.params().get('certificate', '')
+        private_key = demisto.params().get('key', '')
+        if certificate and private_key:
+            certificate_file = NamedTemporaryFile(delete=False, suffix='.pem')
+            certificate_path = certificate_file.name
+            certificate_file.write(bytes(certificate, 'utf-8'))
+            certificate_file.close()
+            connect_args['cert_file'] = certificate_path
+
+            private_key_file = NamedTemporaryFile(delete=False, suffix='.pem')
+            private_key_path = private_key_file.name
+            private_key_file.write(bytes(private_key, 'utf-8'))
+            private_key_file.close()
+            connect_args['key_file'] = private_key_path
+        service = client.connect(**connect_args)
 
     if service is None:
         demisto.error("Could not connect to SplunkPy")
