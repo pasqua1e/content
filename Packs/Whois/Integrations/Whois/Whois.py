@@ -7175,7 +7175,7 @@ def get_whois_raw(domain, server="", previous=None, rfc3490=True, never_cut=Fals
             if err.errno == errno.ECONNRESET:
                 continue
             else:
-                raise err
+                raise
         break
     # Executed only if the for loop ran to the full
     # (3 tries led to errno.ECONNRESET)
