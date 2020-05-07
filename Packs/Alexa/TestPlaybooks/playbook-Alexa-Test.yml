@@ -74,7 +74,7 @@ tasks:
       - '1'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -101,11 +101,11 @@ tasks:
     nexttasks:
       '#default#':
       - '11'
-      yes:
+      'yes':
       - '4'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isEqualString
           left:
@@ -139,7 +139,7 @@ tasks:
       - '5'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -198,11 +198,11 @@ tasks:
     nexttasks:
       '#default#':
       - '15'
-      yes:
+      'yes':
       - '7'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isEqualString
           left:
@@ -236,7 +236,7 @@ tasks:
       - '8'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -295,11 +295,11 @@ tasks:
     nexttasks:
       '#default#':
       - '19'
-      yes:
+      'yes':
       - '10'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isEqualString
           left:
@@ -333,7 +333,7 @@ tasks:
       - '23'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -416,11 +416,11 @@ tasks:
       brand: ''
       description: ''
     nexttasks:
-      yes:
+      'yes':
       - '4'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isEqualString
           left:
@@ -454,7 +454,7 @@ tasks:
       - '12'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -510,7 +510,7 @@ tasks:
       - '17'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -567,11 +567,11 @@ tasks:
       brand: ''
       description: ''
     nexttasks:
-      yes:
+      'yes':
       - '7'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isEqualString
           left:
@@ -631,7 +631,7 @@ tasks:
       - '21'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -688,11 +688,11 @@ tasks:
       brand: ''
       description: ''
     nexttasks:
-      yes:
+      'yes':
       - '10'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isEqualString
           left:
@@ -755,11 +755,11 @@ tasks:
     nexttasks:
       '#default#':
       - '25'
-      yes:
+      'yes':
       - '29'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isNotEqualString
           left:
@@ -830,7 +830,7 @@ tasks:
       - '27'
     scriptarguments:
       all:
-        simple: yes
+        simple: true
       index: {}
       key: {}
       keysToKeep: {}
@@ -906,11 +906,11 @@ tasks:
       brand: ''
       description: ''
     nexttasks:
-      yes:
+      'yes':
       - '29'
     separatecontext: false
     conditions:
-    - label: yes
+    - label: 'yes'
       condition:
       - - operator: isNotEqualString
           left:
