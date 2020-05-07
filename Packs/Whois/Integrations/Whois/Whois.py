@@ -8273,6 +8273,7 @@ def create_outputs(whois_result, domain, query=None):
     ec = {'Name': domain}
     standard_ec = {}  # type:dict
     standard_ec['WHOIS'] = {}
+    standard_ec['QueryResult'] = 'NOT FOUND' not in str(whois_result.get('raw', 'NOT FOUND'))
     if 'status' in whois_result:
         ec['DomainStatus'] = whois_result.get('status')
         standard_ec['DomainStatus'] = whois_result.get('status')
